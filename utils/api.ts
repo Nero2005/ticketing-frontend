@@ -21,6 +21,6 @@ export const http = ({ req }) => {
 };
 
 export const h = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL_CLIENT!,
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL!,
   withCredentials: true,
 });
