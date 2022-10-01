@@ -8,13 +8,13 @@ import axios from "axios";
 export const http = ({ req }) => {
   if (typeof window === "undefined") {
     return axios.create({
-      baseURL: process.env.NEXT_PUBLIC_BACKEND_URL_SERVER!,
+      baseURL: process.env.NEXT_PUBLIC_BACKEND_URL!,
       headers: req.headers,
       withCredentials: true,
     });
   } else {
     return axios.create({
-      baseURL: process.env.NEXT_PUBLIC_BACKEND_URL_CLIENT!,
+      baseURL: process.env.NEXT_PUBLIC_BACKEND_URL!,
       withCredentials: true,
     });
   }
