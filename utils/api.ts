@@ -8,19 +8,19 @@ import axios from "axios";
 export const http = ({ req }) => {
   if (typeof window === "undefined") {
     return axios.create({
-      baseURL: "http://localhost",
+      baseURL: process.env.NEXT_PUBLIC_BACKEND_URL_SERVER!,
       headers: req.headers,
       withCredentials: true,
     });
   } else {
     return axios.create({
-      baseURL: "http://localhost",
+      baseURL: process.env.NEXT_PUBLIC_BACKEND_URL_CLIENT!,
       withCredentials: true,
     });
   }
 };
 
 export const h = axios.create({
-  baseURL: "http://localhost",
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL_CLIENT!,
   withCredentials: true,
 });
